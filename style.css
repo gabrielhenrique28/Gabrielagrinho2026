@@ -1,0 +1,281 @@
+/* Cores do site - Modo Claro */
+:root {
+    --bg-principal: #f0f4f1;
+    --bg-card-claro: #ffffff;
+    --bg-card-escuro: #e8efe9;
+    --texto-cor: #2c3e50;
+    --verde-destaque: #1e4629;
+    --verde-painel: #2e6f40;
+}
+
+/* Cores do site - Modo Escuro */
+body.dark-mode {
+    --bg-principal: #121212;
+    --bg-card-claro: #1e1e1e;
+    --bg-card-escuro: #2d2d2d;
+    --texto-cor: #e0e0e0;
+    --verde-destaque: #81c784;
+    --verde-painel: #1b4324;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-cor);
+    overflow-x: hidden;
+}
+
+/* Botão redondo do menu (canto superior direito) */
+.btn-menu-acessibilidade {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    width: 50px;
+    height: 50px;
+    background-color: #2e6f40;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-menu-acessibilidade:hover {
+    transform: scale(1.05);
+    background-color: #1e4629;
+}
+
+/* As três linhas dentro do botão hambúrguer */
+.btn-menu-acessibilidade .linha {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animação que junta as linhas e forma o X */
+.btn-menu-acessibilidade.aberto .linha:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.btn-menu-acessibilidade.aberto .linha:nth-child(2) {
+    opacity: 0;
+}
+.btn-menu-acessibilidade.aberto .linha:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Caixinha preta onde ficam as ferramentas de acessibilidade */
+.barra-acessibilidade {
+    position: fixed;
+    top: 85px; 
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    
+    /* Efeito para começar escondido e surgir pro lado */
+    opacity: 0;
+    pointer-events: none; 
+    transform: translateX(30px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Classe ativada pelo JS para exibir o menu */
+.barra-acessibilidade.ativo {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.barra-acessibilidade button {
+    background: #ffffff;
+    border: none;
+    color: #2c3e50;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.barra-acessibilidade button:hover {
+    background: #e0e0e0;
+}
+
+/* Configuração visual da primeira dobra (Capa) */
+.capa {
+    height: 100vh;
+    background-color: #1e4629;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.capa-conteudo h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.capa-conteudo p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.seta-rolar {
+    font-size: 2rem;
+    animation: flutuar 2s infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* Estilo padrão das seções da jornada */
+.estacao {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+/* Cores alternadas para quebrar a monotonia visual */
+#estacao1 { background-color: var(--bg-card-claro); }
+#estacao2 { background-color: var(--bg-card-escuro); }
+#estacao3 { background-color: var(--bg-card-claro); }
+#estacao4 { background-color: var(--verde-painel); color: white; }
+
+.conteudo {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.numero-passo {
+    font-size: 4rem;
+    font-weight: 900;
+    opacity: 0.15;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--verde-destaque);
+}
+
+#estacao4 .numero-passo {
+    color: #ffffff;
+    opacity: 0.3;
+}
+
+.estacao h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--verde-destaque);
+}
+
+#estacao4 h2 {
+    color: #ffffff;
+}
+
+.estacao p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Controla como os blocos começam sumidos para a animação de scroll */
+.esconder {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background-color: #1a221c;
+    color: #8fa895;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .capa-conteudo h1 { font-size: 2rem; }
+    .estacao h2 { font-size: 1.8rem; }
+}
+
+/* Balão explicativo que aparece ao passar o mouse no menu (Tooltip) */
+.btn-menu-acessibilidade::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    right: 60px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Seta pequena do balão indicativo */
+.btn-menu-acessibilidade::before {
+    content: "";
+    position: absolute;
+    right: 54px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.85);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Faz o balão surgir no hover do mouse */
+.btn-menu-acessibilidade:hover::after,
+.btn-menu-acessibilidade:hover::before {
+    opacity: 1;
+}
+
+/* Esconde a caixinha se o menu já estiver aberto */
+.btn-menu-acessibilidade.aberto:hover::after,
+.btn-menu-acessibilidade.aberto:hover::before {
+    opacity: 0;
+}

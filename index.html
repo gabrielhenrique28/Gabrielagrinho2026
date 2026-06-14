@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - Jornada Agro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="btn-menu-acessibilidade" onclick="toggleMenuAcessibilidade()" aria-label="Abrir opções de acessibilidade" data-tooltip="Acessibilidade e Modo Escuro">
+        <span class="linha"></span>
+        <span class="linha"></span>
+        <span class="linha"></span>
+    </button>
+
+    <div class="barra-acessibilidade" id="menu-acessibilidade" role="toolbar" aria-label="Ferramentas de Acessibilidade">
+        <button id="btn-tema" onclick="alternarTema()" aria-label="Alternar modo escuro e claro">Contrastes 🌓</button>
+        <button onclick="mudarFonte(1)" aria-label="Aumentar tamanho do texto">A +</button>
+        <button onclick="mudarFonte(-1)" aria-label="Diminuir tamanho do texto">A -</button>
+    </div>
+
+    <header class="capa">
+        <div class="capa-conteudo">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Role para baixo e acompanhe a jornada do equilíbrio entre produção e meio ambiente.</p>
+            <div class="seta-rolar" aria-hidden="true">↓</div>
+        </div>
+    </header>
+
+    <section class="estacao esconder" id="estacao1">
+        <div class="conteudo">
+            <div class="numero-passo" aria-hidden="true">01</div>
+            <h2>Tecnologia e Precisão</h2>
+            <p>O agro forte começa com a inteligência. O uso de drones, sensores de solo e inteligência artificial permite aplicar água e insumos na quantidade exata, evitando desperdícios e protegendo o solo.</p>
+        </div>
+    </section>
+
+    <section class="estacao esconder" id="estacao2">
+        <div class="conteudo">
+            <div class="numero-passo" aria-hidden="true">02</div>
+            <h2>Cuidado com as Nascentes</h2>
+            <p>Produzir exige água, e proteger as fontes é um dever. Propriedades sustentáveis cercam áreas de preservação permanente (APPs) e reflorestam margens de rios, garantindo água limpa para o futuro.</p>
+        </div>
+    </section>
+
+    <section class="estacao esconder" id="estacao3">
+        <div class="conteudo">
+            <div class="numero-passo" aria-hidden="true">03</div>
+            <h2>Matriz Energética Renovável</h2>
+            <p>O Sol que faz a lavoura crescer também abastece a fazenda. Telhados de galpões cobertos por painéis solares e o uso de biomassa transformam resíduos em energia limpa, reduzindo a pegada de carbono.</p>
+        </div>
+    </section>
+
+    <section class="estacao esconder" id="estacao4">
+        <div class="conteudo">
+            <div class="numero-passo" aria-hidden="true">04</div>
+            <h2>O Equilíbrio Alcançado</h2>
+            <p>Com a rotação de culturas e o sistema de Integração Lavoura-Pecuária-Floresta (iLPF), a terra se mantém fértil, o produtor colhe mais e a natureza agradece. Esse é o futuro do nosso agro!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Concurso Agrinho 2026 - Rumo ao Futuro Sustentável</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
